@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 220" width="200" height="220">
+  <rect width="200" height="220" fill="#dceaf5"/>
+  <g stroke="#2f4a5f" stroke-width="1.5">
+    <path d="M30,60 L70,50 L90,70 L80,100 L50,110 L25,90 Z" fill="#c9a86a"/>
+    <path d="M95,55 L140,45 L165,70 L150,105 L110,110 L90,85 Z" fill="#a8c48a"/>
+    <path d="M40,120 L85,115 L100,150 L70,175 L35,160 Z" fill="#d98f6a"/>
+    <path d="M110,120 L160,115 L170,150 L140,180 L100,155 Z" fill="#8ab0c4"/>
+  </g>
+  <g>
+    <polygon points="55,80 60,70 65,80" fill="#7a2d2d"/>
+    <polygon points="120,75 125,65 130,75" fill="#2d4d7a"/>
+    <polygon points="60,140 65,130 70,140" fill="#7a2d2d"/>
+    <polygon points="130,140 135,130 140,140" fill="#3a7a3a"/>
+    <polygon points="90,95 95,85 100,95" fill="#2d4d7a"/>
+  </g>
+</svg>

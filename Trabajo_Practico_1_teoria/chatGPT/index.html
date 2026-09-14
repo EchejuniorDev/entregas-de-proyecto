@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Catálogo de juegos de mesa organizado por categorías.">
+    <title>Catálogo de Juegos de Mesa</title>
+    <link rel="stylesheet" href="estilosIA.css">
+</head>
+
+<body>
+
+    <!-- Enlace para usuarios de teclado -->
+    <a class="skip-link" href="#contenido-principal">
+        Saltar al contenido principal
+    </a>
+
+    <header class="encabezado">
+        <div>
+            <p class="marca">Juegos de Mesa</p>
+            <p class="submarca">Catálogo de Juegos</p>
+        </div>
+    </header>
+
+    <div class="estructura-principal">
+
+        <!-- BARRA LATERAL -->
+        <aside class="barra-lateral">
+
+            <nav aria-label="Navegación principal">
+
+                <fieldset class="grupo-navegacion">
+
+                    <legend>Secciones</legend>
+
+                    <div class="opcion-radio">
+                        <input
+                            type="radio"
+                            id="vista-catalogo"
+                            name="vista"
+                            checked
+                        >
+                        <label for="vista-catalogo">
+                            Catálogo
+                        </label>
+                    </div>
+
+                    <div class="opcion-radio">
+                        <input
+                            type="radio"
+                            id="vista-informacion"
+                            name="vista"
+                        >
+                        <label for="vista-informacion">
+                            Información del catálogo
+                        </label>
+                    </div>
+
+                </fieldset>
+
+            </nav>
+
+        </aside>
+
+        <!-- CONTENIDO PRINCIPAL -->
+        <main id="contenido-principal">
+
+            <!-- ============================= -->
+            <!-- CATÁLOGO -->
+            <!-- ============================= -->
+
+            <section class="vista vista-catalogo" aria-labelledby="titulo-catalogo">
+
+                <header class="cabecera-seccion">
+                    <h1 id="titulo-catalogo">Catálogo de Juegos de Mesa</h1>
+
+                    <p>
+                        Explorá diferentes juegos de mesa y descubrí qué propone cada uno.
+                    </p>
+                </header>
+
+                <!-- SELECTOR DE CATEGORÍAS -->
+                <fieldset class="selector-categorias">
+
+                    <legend>Elegí una categoría</legend>
+
+                    <div class="categorias">
+
+                        <div class="opcion-radio">
+                            <input
+                                type="radio"
+                                id="categoria-martinis"
+                                name="categoria"
+                                checked
+                            >
+                            <label for="categoria-martinis">
+                                Estrategia
+                            </label>
+                        </div>
+
+                        <div class="opcion-radio">
+                            <input
+                                type="radio"
+                                id="categoria-negronis"
+                                name="categoria"
+                            >
+                            <label for="categoria-negronis">
+                                Cartas
+                            </label>
+                        </div>
+
+                        <div class="opcion-radio">
+                            <input
+                                type="radio"
+                                id="categoria-daiquiris"
+                                name="categoria"
+                            >
+                            <label for="categoria-daiquiris">
+                                Familiares
+                            </label>
+                        </div>
+
+                    </div>
+
+                </fieldset>
+
+
+                <!-- ============================= -->
+                <!-- ESTRATEGIA -->
+                <!-- ============================= -->
+
+                <section
+                    id="martinis"
+                    class="categoria categoria-martinis"
+                    aria-labelledby="titulo-martinis"
+                >
+
+                    <h2 id="titulo-martinis">Estrategia</h2>
+
+                    <div class="catalogo">
+
+                        <article class="tarjeta-cocktail">
+
+                            <figure>
+                                <img
+                                    src="imágenes/catan.jpg"
+                                    alt="Juego de estrategia y negociación"
+                                >
+                            </figure>
+
+                            <div class="contenido-tarjeta">
+
+                                <h3>Catan</h3>
+
+                                <p>Un clásico de estrategia y negociación en el que los jugadores compiten por desarrollar sus territorios y conseguir recursos.</p>
+
+                                <div class="receta">
+                                    <h4>Datos del juego</h4>
+
+                                    <ul><li>3 a 4 jugadores</li><li>60 a 90 minutos</li><li>Edad recomendada: 10+</li></ul>
+
+                                    <p>Recolectá recursos, negociá con otros jugadores y construí caminos, poblados y ciudades para conseguir la mayor cantidad de puntos.</p>
+                                </div>
+
+                            </div>
+
+                        </article>
+
+
+                        <article class="cocktail-card">
+
+                                <figure class="imagen-container">
+
+                                    <img
+                                        src="imágenes/wonders.jpg"
+                                        alt="Juego de estrategia y construcción de mazos"
+                                    >
+
+                                </figure>
+
+                                <div class="cocktail-contenido">
+
+                                    <h4>7 Wonders</h4>
+
+                                    <p>Un juego de estrategia en el que cada jugador desarrolla una civilización mediante cartas, recursos, ciencia y poder militar.</p>
+
+                                    <h4>Datos del juego</h4>
+
+                                    <ul><li>3 a 7 jugadores</li><li>30 minutos</li><li>Edad recomendada: 10+</li></ul>
+<p>Elegí cartas en cada ronda y desarrollá tu civilización intentando conseguir la mayor cantidad de puntos al final de la partida.</p>
+
+                                </div>
+
+                            </article>
+
+                    </div>
+
+                </section>
+
+
+                <!-- ============================= -->
+                <!-- CARTAS -->
+                <!-- ============================= -->
+
+                <section
+                    id="negronis"
+                    class="categoria categoria-negronis"
+                    aria-labelledby="titulo-negronis"
+                >
+
+                    <h2 id="titulo-negronis">Cartas</h2>
+
+                    <div class="catalogo">
+
+                        <article class="tarjeta-cocktail">
+
+                            <figure>
+                                <img
+                                    src="imágenes/sushigo.jpg"
+                                    alt="Juego de cartas y colección de sets"
+                                >
+                            </figure>
+
+                            <div class="contenido-tarjeta">
+
+                                <h3>Sushi Go!</h3>
+
+                                <p>Un juego de cartas rápido y dinámico en el que los jugadores buscan combinar diferentes platos para conseguir la mejor puntuación.</p>
+
+                                <div class="receta">
+                                    <h4>Datos del juego</h4>
+
+                                    <ul><li>2 a 5 jugadores</li><li>15 minutos</li><li>Edad recomendada: 8+</li></ul>
+
+                                    <p>Elegí una carta de tu mano, pasá el resto al siguiente jugador y repetí el proceso hasta completar la ronda.</p>
+                                </div>
+
+                            </div>
+
+                        </article>
+
+
+                        <article class="tarjeta-cocktail">
+
+                            <figure>
+                                <img
+                                    src="imágenes/loveletter.jpg"
+                                    alt="Juego de cartas y deducción"
+                                >
+                            </figure>
+
+                            <div class="contenido-tarjeta">
+
+                                <h3>Love Letter</h3>
+
+                                <p>Un juego de cartas breve de deducción y riesgo en el que cada jugador intenta descubrir las cartas de sus rivales y proteger la propia.</p>
+
+                                <div class="receta">
+                                    <h4>Datos del juego</h4>
+
+                                    <ul><li>2 a 4 jugadores</li><li>20 minutos</li><li>Edad recomendada: 8+</li></ul>
+
+                                    <p>Jugá una carta por turno y utilizá su habilidad para obtener información, eliminar rivales o acercarte a la victoria.</p>
+                                </div>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </section>
+
+
+                <!-- ============================= -->
+                <!-- FAMILIARES -->
+                <!-- ============================= -->
+
+                <section
+                    id="daiquiris"
+                    class="categoria categoria-daiquiris"
+                    aria-labelledby="titulo-daiquiris"
+                >
+
+                    <h2 id="titulo-daiquiris">Familiares</h2>
+
+                    <div class="catalogo">
+
+                        <article class="tarjeta-cocktail">
+
+                            <figure>
+                                <img
+                                    src="imágenes/dobble.jpg"
+                                    alt="Juego familiar de velocidad y observación"
+                                >
+                            </figure>
+
+                            <div class="contenido-tarjeta">
+
+                                <h3>Dobble</h3>
+
+                                <p>Un juego familiar de observación y rapidez en el que todos compiten por encontrar el único símbolo que se repite entre dos cartas.</p>
+
+                                <div class="receta">
+                                    <h4>Datos del juego</h4>
+
+                                    <ul><li>2 a 8 jugadores</li><li>15 minutos</li><li>Edad recomendada: 6+</li></ul>
+
+                                    <p>Compará las cartas rápidamente y encontrá el símbolo coincidente antes que los demás jugadores.</p>
+                                </div>
+
+                            </div>
+
+                        </article>
+
+
+                        <article class="cocktail-card">
+
+                                <figure class="imagen-container">
+
+                                    <img
+                                        src="imágenes/dixit.jpg"
+                                        alt="Juego familiar de creatividad y comunicación"
+                                    >
+
+                                </figure>
+
+                                <div class="cocktail-contenido">
+
+                                    <h4>Dixit</h4>
+
+                                    <p>Un juego familiar de imaginación y asociación de ideas en el que las ilustraciones sirven como punto de partida para crear pistas originales.</p>
+
+                                    <h4>Datos del juego</h4>
+
+                                    <ul><li>3 a 8 jugadores</li><li>30 minutos</li><li>Edad recomendada: 8+</li></ul>
+<p>Elegí una carta y describila con una pista; los demás deberán encontrarla entre las cartas disponibles sin que la pista sea demasiado obvia.</p>
+
+                                </div>
+
+                            </article>
+
+                    </div>
+
+                </section>
+
+            </section>
+
+
+            <!-- ============================= -->
+            <!-- INFORMACIÓN PERSONAL -->
+            <!-- ============================= -->
+
+            <section
+                class="vista vista-informacion"
+                aria-labelledby="titulo-informacion"
+            >
+
+                <header class="cabecera-seccion">
+                    <h1 id="titulo-informacion">
+                        Información del catálogo
+                    </h1>
+
+                    <p>
+                        Dejá tus datos para recibir novedades sobre nuevos juegos y recomendaciones.
+                    </p>
+                </header>
+
+                <form class="formulario">
+
+                    <div class="campo">
+
+                        <label for="nombre">
+                            DNI
+                        </label>
+
+                        <input
+                            type="text"
+                            id="nombre"
+                            name="nombre"
+                            autocomplete="name"
+                            autocomplete="off"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="campo">
+
+                        <label for="email">
+                            Correo electrónico
+                        </label>
+
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            autocomplete="email"
+                            required
+                        >
+
+                    </div>
+
+
+                    <button type="submit">
+                        Enviar información
+                    </button>
+
+                </form>
+
+            </section>
+
+        </main>
+
+    </div>
+
+<footer class="pie">
+    <p>Ezequiel Preto</p>
+    <p>
+        Instagram:
+        <a href="https://www.instagram.com/pibebartender_/"
+           target="_blank"
+           rel="noopener noreferrer">
+            @pibebartender_
+        </a>
+    </p>
+</footer>
+
+</body>
+</html>

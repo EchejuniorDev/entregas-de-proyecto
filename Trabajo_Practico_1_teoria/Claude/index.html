@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Juegos de Mesa — Catálogo | Ezequiel Prieto</title>
+  <meta name="description" content="Catálogo de juegos de mesa organizado por categorías: estrategia, cartas y familiares.">
+  <link rel="stylesheet" href="estilosIA.css">
+</head>
+<body>
+
+  <a class="salto-enlace" href="#contenido-principal">Saltar al contenido principal</a>
+
+  <header class="cabecera-sitio">
+    <h1>Juegos de Mesa</h1>
+    <p class="lema">Catálogo de juegos clásicos, elegidos para toda ocasión.</p>
+  </header>
+
+  <div class="disposicion">
+
+    <nav class="barra-lateral" aria-label="Navegación principal">
+      <ul>
+        <li><a href="index.html" aria-current="page">Catálogo de juegos</a></li>
+        <li><a href="formulario.html">Dejá tus datos</a></li>
+      </ul>
+    </nav>
+
+    <main id="contenido-principal" class="catalogo">
+
+      <fieldset class="filtro-categorias">
+        <legend>Elegí una categoría de juegos</legend>
+
+        <input type="radio" name="categoria" id="cat-estrategia" checked>
+        <label for="cat-estrategia">Estrategia</label>
+
+        <input type="radio" name="categoria" id="cat-cartas">
+        <label for="cat-cartas">Cartas</label>
+
+        <input type="radio" name="categoria" id="cat-familiares">
+        <label for="cat-familiares">Familiares</label>
+      </fieldset>
+
+      <section id="sec-estrategia" class="categoria-cocteles" aria-labelledby="titulo-estrategia">
+        <h2 id="titulo-estrategia">Estrategia</h2>
+        <div class="grilla-cocteles">
+
+          <article class="tarjeta-cocktail">
+            <img src="imagenes/juego-colonizadores.jpg" alt="Tablero hexagonal con terrenos de distintos colores y piezas de construcción" width="200" height="220">
+            <h3>Colonizadores</h3>
+            <p>Comercio, recursos y negociación sobre un tablero de terrenos. Cada partida cambia el mapa y la estrategia.</p>
+          </article>
+
+          <article class="tarjeta-cocktail">
+            <img src="imagenes/juego-conquista.jpg" alt="Mapa mundial dividido en territorios con ejércitos de miniaturas de distintos colores" width="200" height="220">
+            <h3>Conquista Mundial</h3>
+            <p>Ejércitos, territorios y alianzas que se rompen. El clásico de dominación por turnos.</p>
+          </article>
+
+        </div>
+      </section>
+
+      <section id="sec-cartas" class="categoria-cocteles" aria-labelledby="titulo-cartas">
+        <h2 id="titulo-cartas">Cartas</h2>
+        <div class="grilla-cocteles">
+
+          <article class="tarjeta-cocktail">
+            <img src="imagenes/juego-colores.jpg" alt="Mazo de cartas de colores con números y símbolos especiales esparcidas en abanico" width="200" height="220">
+            <h3>Cartas de Colores</h3>
+            <p>Combiná números y colores para quedarte sin cartas primero. Rápido, ruidoso y adictivo.</p>
+          </article>
+
+          <article class="tarjeta-cocktail">
+            <img src="imagenes/juego-explosivo.jpg" alt="Mazo de cartas ilustradas con un gato y una explosión de colores" width="200" height="220">
+            <h3>Gatos Explosivos</h3>
+            <p>Un mazo cargado de trampas y sorpresas. Evitá la carta equivocada o quedás afuera.</p>
+          </article>
+
+        </div>
+      </section>
+
+      <section id="sec-familiares" class="categoria-cocteles" aria-labelledby="titulo-familiares">
+        <h2 id="titulo-familiares">Familiares</h2>
+        <div class="grilla-cocteles">
+
+          <article class="tarjeta-cocktail">
+            <img src="imagenes/juego-torre.jpg" alt="Torre de bloques de madera apilados con algunos bloques retirados de la base" width="200" height="220">
+            <h3>Torre de Bloques</h3>
+            <p>Sacá una pieza, ponela arriba y no dejes que se caiga. Pulso firme y nervios de acero.</p>
+          </article>
+
+          <article class="tarjeta-cocktail">
+            <img src="imagenes/juego-preguntados.jpg" alt="Tablero circular con casilleros de colores y una caja de tarjetas con preguntas" width="200" height="220">
+            <h3>Preguntados</h3>
+            <p>Cultura general, categorías de colores y esa pregunta que nadie sabe responder. Ideal en grupo.</p>
+          </article>
+
+        </div>
+      </section>
+
+    </main>
+
+  </div>
+
+  <footer class="pie-sitio">
+    <p>Ezequiel Prieto</p>
+    <p><a href="https://instagram.com/pibebartender_" target="_blank" rel="noopener noreferrer">Instagram: @pibebartender_</a></p>
+  </footer>
+
+</body>
+</html>
