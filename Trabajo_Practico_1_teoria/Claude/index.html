@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cócteles de Autor — Catálogo | Ezequiel Prieto</title>
+  <meta name="description" content="Catálogo de cócteles de autor organizado por categorías: martinis, negronis y daiquiris.">
+  <link rel="stylesheet" href="estilosIA.css">
+</head>
+<body>
+
+  <a class="salto-enlace" href="#contenido-principal">Saltar al contenido principal</a>
+
+  <header class="cabecera-sitio">
+    <h1>Cócteles de Autor</h1>
+    <p class="lema">Catálogo de tragos clásicos, elegidos con oficio de barra.</p>
+  </header>
+
+  <div class="disposicion">
+
+    <nav class="barra-lateral" aria-label="Navegación principal">
+      <ul>
+        <li><a href="index.html" aria-current="page">Catálogo de cócteles</a></li>
+        <li><a href="formulario.html">Dejá tus datos</a></li>
+      </ul>
+    </nav>
+
+    <main id="contenido-principal" class="catalogo">
+
+      <fieldset class="filtro-categorias">
+        <legend>Elegí una categoría de cócteles</legend>
+
+        <input type="radio" name="categoria" id="cat-martinis" checked>
+        <label for="cat-martinis">Martinis</label>
+
+        <input type="radio" name="categoria" id="cat-negronis">
+        <label for="cat-negronis">Negronis</label>
+
+        <input type="radio" name="categoria" id="cat-daiquiris">
+        <label for="cat-daiquiris">Daiquiris</label>
+      </fieldset>
+
+      <section id="sec-martinis" class="categoria-cocteles" aria-labelledby="titulo-martinis">
+        <h2 id="titulo-martinis">Martinis</h2>
+        <div class="grilla-cocteles">
+
+          <article class="tarjeta-cocktail">
+            <img src="imagenes/martini-clasico.svg" alt="Copa de martini triangular con líquido transparente y una aceituna verde" width="200" height="220">
+            <h3>Martini Clásico</h3>
+            <p>Gin, vermut seco y una aceituna. El trago que define la barra: seco, frío y directo.</p>
+          </article>
+
+          <article class="tarjeta-cocktail">
+            <img src="imagenes/espresso-martini.svg" alt="Copa de martini con líquido oscuro y espuma de café en la superficie" width="200" height="220">
+            <h3>Espresso Martini</h3>
+            <p>Vodka, licor de café y un shot de espresso recién extraído. Espuma dorada y golpe de cafeína.</p>
+          </article>
+
+        </div>
+      </section>
+
+      <section id="sec-negronis" class="categoria-cocteles" aria-labelledby="titulo-negronis">
+        <h2 id="titulo-negronis">Negronis</h2>
+        <div class="grilla-cocteles">
+
+          <article class="tarjeta-cocktail">
+            <img src="imagenes/negroni-clasico.svg" alt="Vaso bajo con hielo, líquido rojo intenso y una rodaja de naranja" width="200" height="220">
+            <h3>Negroni Clásico</h3>
+            <p>Gin, vermut rojo y Campari, en partes iguales. Amargo, franco, sin vueltas.</p>
+          </article>
+
+          <article class="tarjeta-cocktail">
+            <img src="imagenes/negroni-sbagliato.svg" alt="Copa de vino con líquido rojo anaranjado, burbujas y una rodaja de naranja" width="200" height="220">
+            <h3>Negroni Sbagliato</h3>
+            <p>Vermut rojo, Campari y espumante en lugar de gin. Más liviano, con burbuja y con historia.</p>
+          </article>
+
+        </div>
+      </section>
+
+      <section id="sec-daiquiris" class="categoria-cocteles" aria-labelledby="titulo-daiquiris">
+        <h2 id="titulo-daiquiris">Daiquiris</h2>
+        <div class="grilla-cocteles">
+
+          <article class="tarjeta-cocktail">
+            <img src="imagenes/daiquiri-clasico.svg" alt="Copa tipo coupe con líquido transparente amarillento y una rodaja de lima" width="200" height="220">
+            <h3>Daiquiri Clásico</h3>
+            <p>Ron blanco, lima y azúcar. Tres ingredientes, ningún atajo: el equilibrio hecho trago.</p>
+          </article>
+
+          <article class="tarjeta-cocktail">
+            <img src="imagenes/daiquiri-fresa.svg" alt="Copa con líquido rosado espeso tipo frozen, decorada con una fresa" width="200" height="220">
+            <h3>Daiquiri de Fresa</h3>
+            <p>Ron blanco, fresas frescas, lima y azúcar, procesados con hielo. Versión frozen del clásico.</p>
+          </article>
+
+        </div>
+      </section>
+
+    </main>
+
+  </div>
+
+  <footer class="pie-sitio">
+    <p>Ezequiel Prieto</p>
+    <p><a href="https://instagram.com/pibebartender_" target="_blank" rel="noopener noreferrer">Instagram: @pibebartender_</a></p>
+  </footer>
+
+</body>
+</html>

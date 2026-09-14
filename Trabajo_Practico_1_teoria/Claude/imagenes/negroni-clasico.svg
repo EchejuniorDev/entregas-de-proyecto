@@ -1,0 +1,12 @@
+<svg viewBox="0 0 200 220" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="t3 d3">
+  <title id="t3">Negroni Clásico</title>
+  <desc id="d3">Vaso bajo con hielo, líquido rojo intenso y una rodaja de naranja</desc>
+  <rect width="200" height="220" fill="#FFFBF2"/>
+  <path d="M65,50 L135,50 L140,180 L60,180 Z" fill="#EDE7D3" stroke="#5C6B4F" stroke-width="3"/>
+  <path d="M70,90 L130,90 L134,178 L66,178 Z" fill="#8B1E1E"/>
+  <rect x="80" y="100" width="22" height="22" fill="#F4EDE0" opacity="0.85" stroke="#c9c2b2" stroke-width="1"/>
+  <rect x="105" y="120" width="20" height="20" fill="#F4EDE0" opacity="0.85" stroke="#c9c2b2" stroke-width="1"/>
+  <circle cx="140" cy="70" r="16" fill="#D98A3D" stroke="#A6511F" stroke-width="2"/>
+  <line x1="140" y1="58" x2="140" y2="82" stroke="#A6511F" stroke-width="1.5"/>
+  <line x1="128" y1="70" x2="152" y2="70" stroke="#A6511F" stroke-width="1.5"/>
+</svg>

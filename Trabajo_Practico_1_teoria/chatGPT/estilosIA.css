@@ -1,0 +1,598 @@
+/* =========================================
+   VARIABLES
+========================================= */
+
+:root {
+    --fondo: #121212;
+    --fondo-secundario: #1c1c1c;
+    --fondo-tarjeta: #242424;
+
+    --texto: #f5f5f5;
+    --texto-secundario: #d0d0d0;
+
+    --acento: #f0c75e;
+    --acento-hover: #ffd978;
+
+    --borde: #777777;
+    --borde-fuerte: #aaaaaa;
+
+    --ancho-sidebar: 250px;
+}
+
+
+/* =========================================
+   CONFIGURACIÓN GENERAL
+========================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+
+    background-color: var(--fondo);
+    color: var(--texto);
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    line-height: 1.6;
+}
+
+img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+a {
+    color: var(--acento);
+}
+
+
+/* =========================================
+   NAVEGACIÓN CON TECLADO
+========================================= */
+
+.skip-link {
+    position: fixed;
+    top: -100px;
+    left: 20px;
+
+    padding: 12px 18px;
+
+    background-color: var(--acento);
+    color: #111111;
+
+    font-weight: bold;
+    text-decoration: none;
+
+    border-radius: 6px;
+
+    z-index: 1000;
+}
+
+.skip-link:focus {
+    top: 20px;
+}
+
+
+/* =========================================
+   ENCABEZADO
+========================================= */
+
+.encabezado {
+    padding: 25px 30px;
+
+    background-color: var(--fondo-secundario);
+
+    border-bottom: 1px solid var(--borde);
+}
+
+.marca {
+    margin: 0;
+
+    color: var(--acento);
+
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+.submarca {
+    margin: 2px 0 0;
+
+    color: var(--texto-secundario);
+}
+
+
+/* =========================================
+   ESTRUCTURA PRINCIPAL
+========================================= */
+
+.estructura-principal {
+    display: grid;
+
+    grid-template-columns: var(--ancho-sidebar) 1fr;
+
+    min-height: calc(100vh - 150px);
+}
+
+
+/* =========================================
+   BARRA LATERAL
+========================================= */
+
+.barra-lateral {
+    padding: 25px 20px;
+
+    background-color: #181818;
+
+    border-right: 1px solid var(--borde);
+}
+
+.grupo-navegacion {
+    margin: 0;
+    padding: 0;
+
+    border: 0;
+}
+
+.grupo-navegacion legend {
+    margin-bottom: 15px;
+
+    color: var(--acento);
+
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+.opcion-radio {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    margin-bottom: 12px;
+}
+
+.opcion-radio input[type="radio"] {
+    width: 20px;
+    height: 20px;
+
+    margin: 0;
+
+    accent-color: var(--acento);
+
+    cursor: pointer;
+}
+
+.opcion-radio label {
+    color: var(--texto);
+
+    cursor: pointer;
+
+    font-weight: 600;
+}
+
+
+/* =========================================
+   CONTROLES DE FOCO
+========================================= */
+
+/*
+   Muy importante para WCAG AA:
+   cuando un radio, input, botón o enlace
+   recibe foco, tiene que ser claramente visible.
+*/
+
+input:focus-visible,
+button:focus-visible,
+a:focus-visible {
+    outline: 3px solid var(--acento-hover);
+    outline-offset: 3px;
+}
+
+
+/* =========================================
+   CONTENIDO
+========================================= */
+
+main {
+    min-width: 0;
+
+    padding: 35px;
+}
+
+.cabecera-seccion {
+    margin-bottom: 30px;
+}
+
+.cabecera-seccion h1 {
+    margin-top: 0;
+    margin-bottom: 10px;
+
+    font-size: 2rem;
+}
+
+.cabecera-seccion p {
+    margin: 0;
+
+    color: var(--texto-secundario);
+}
+
+
+/* =========================================
+   SISTEMA DE VISTAS
+========================================= */
+
+/*
+   Por defecto mostramos el catálogo.
+*/
+
+.vista-catalogo {
+    display: block;
+}
+
+.vista-informacion {
+    display: none;
+}
+
+
+/*
+   Si se selecciona "Información personal",
+   ocultamos el catálogo y mostramos el formulario.
+*/
+
+body:has(#vista-informacion:checked) .vista-catalogo {
+    display: none;
+}
+
+body:has(#vista-informacion:checked) .vista-informacion {
+    display: block;
+}
+
+
+/*
+   Si se selecciona "Catálogo", hacemos
+   explícito el comportamiento inverso.
+*/
+
+body:has(#vista-catalogo:checked) .vista-catalogo {
+    display: block;
+}
+
+body:has(#vista-catalogo:checked) .vista-informacion {
+    display: none;
+}
+
+
+/* =========================================
+   SELECTOR DE CATEGORÍAS
+========================================= */
+
+.selector-categorias {
+    margin: 0 0 30px;
+    padding: 20px;
+
+    border: 1px solid var(--borde);
+    border-radius: 8px;
+
+    background-color: var(--fondo-secundario);
+}
+
+.selector-categorias legend {
+    padding: 0 8px;
+
+    color: var(--acento);
+
+    font-weight: bold;
+}
+
+.categorias {
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: 20px;
+}
+
+
+/* =========================================
+   CATEGORÍAS
+========================================= */
+
+.categoria {
+    display: none;
+}
+
+.categoria h2 {
+    margin-top: 0;
+
+    color: var(--acento);
+
+    font-size: 1.6rem;
+}
+
+
+/*
+   Martinis aparece inicialmente.
+*/
+
+.categoria-martinis {
+    display: block;
+}
+
+
+/*
+   Cuando se selecciona Negronis.
+*/
+
+body:has(#categoria-negronis:checked) .categoria-martinis {
+    display: none;
+}
+
+body:has(#categoria-negronis:checked) .categoria-negronis {
+    display: block;
+}
+
+
+/*
+   Cuando se selecciona Daiquiris.
+*/
+
+body:has(#categoria-daiquiris:checked) .categoria-martinis {
+    display: none;
+}
+
+body:has(#categoria-daiquiris:checked) .categoria-daiquiris {
+    display: block;
+}
+
+
+/*
+   Cuando se selecciona Martinis.
+*/
+
+body:has(#categoria-martinis:checked) .categoria-martinis {
+    display: block;
+}
+
+body:has(#categoria-martinis:checked) .categoria-negronis,
+body:has(#categoria-martinis:checked) .categoria-daiquiris {
+    display: none;
+}
+
+
+/* =========================================
+   CATÁLOGO
+========================================= */
+
+.catalogo {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 25px;
+}
+
+
+/* =========================================
+   TARJETAS
+========================================= */
+
+.tarjeta-cocktail {
+    overflow: hidden;
+
+    background-color: var(--fondo-tarjeta);
+
+    border: 1px solid var(--borde);
+    border-radius: 10px;
+}
+
+.tarjeta-cocktail figure {
+    margin: 0;
+}
+
+.tarjeta-cocktail img {
+    width: 100%;
+    height: 230px;
+
+    object-fit: cover;
+}
+
+.contenido-tarjeta {
+    padding: 22px;
+}
+
+.contenido-tarjeta h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+
+    color: var(--acento);
+
+    font-size: 1.4rem;
+}
+
+.contenido-tarjeta > p {
+    color: var(--texto-secundario);
+}
+
+.receta {
+    margin-top: 20px;
+    padding: 15px;
+
+    background-color: #191919;
+
+    border-left: 4px solid var(--acento);
+}
+
+.receta h4 {
+    margin-top: 0;
+
+    color: var(--texto);
+}
+
+.receta ul {
+    padding-left: 20px;
+}
+
+.receta p {
+    margin-bottom: 0;
+
+    color: var(--texto-secundario);
+}
+
+
+/* =========================================
+   FORMULARIO
+========================================= */
+
+.formulario {
+    max-width: 600px;
+
+    padding: 25px;
+
+    background-color: var(--fondo-secundario);
+
+    border: 1px solid var(--borde);
+    border-radius: 10px;
+}
+
+.campo {
+    display: flex;
+    flex-direction: column;
+
+    margin-bottom: 20px;
+}
+
+.campo label {
+    margin-bottom: 7px;
+
+    font-weight: bold;
+}
+
+.campo input {
+    width: 100%;
+
+    padding: 12px;
+
+    background-color: #111111;
+    color: var(--texto);
+
+    border: 1px solid var(--borde);
+    border-radius: 5px;
+
+    font-size: 1rem;
+}
+
+.campo input:focus {
+    border-color: var(--acento);
+}
+
+button {
+    padding: 12px 20px;
+
+    background-color: var(--acento);
+    color: #111111;
+
+    border: 2px solid var(--acento);
+    border-radius: 6px;
+
+    font-size: 1rem;
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: var(--acento-hover);
+    border-color: var(--acento-hover);
+}
+
+
+/* =========================================
+   PIE DE PÁGINA
+========================================= */
+
+.pie {
+    padding: 25px;
+
+    background-color: var(--fondo-secundario);
+
+    border-top: 1px solid var(--borde);
+
+    text-align: center;
+}
+
+.pie p {
+    margin: 5px;
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 800px) {
+
+    .estructura-principal {
+        grid-template-columns: 1fr;
+    }
+
+    .barra-lateral {
+        border-right: 0;
+        border-bottom: 1px solid var(--borde);
+    }
+
+    main {
+        padding: 25px 20px;
+    }
+
+    .catalogo {
+        grid-template-columns: 1fr;
+    }
+
+    .categorias {
+        flex-direction: column;
+        gap: 12px;
+    }
+}
+
+
+@media (max-width: 500px) {
+
+    .encabezado {
+        padding: 20px;
+    }
+
+    .marca {
+        font-size: 1.5rem;
+    }
+
+    .cabecera-seccion h1 {
+        font-size: 1.6rem;
+    }
+
+    .tarjeta-cocktail img {
+        height: 200px;
+    }
+}
+
+
+/* =========================================
+   REDUCCIÓN DE MOVIMIENTO
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+}

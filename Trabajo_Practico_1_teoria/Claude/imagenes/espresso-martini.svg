@@ -1,0 +1,12 @@
+<svg viewBox="0 0 200 220" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="t2 d2">
+  <title id="t2">Espresso Martini</title>
+  <desc id="d2">Copa de martini con líquido oscuro y espuma de café en la superficie</desc>
+  <rect width="200" height="220" fill="#FFFBF2"/>
+  <polygon points="40,40 160,40 100,120" fill="#EDE7D3" stroke="#5C6B4F" stroke-width="3"/>
+  <polygon points="52,48 148,48 100,108" fill="#3B2417"/>
+  <ellipse cx="100" cy="52" rx="42" ry="7" fill="#C9A46A"/>
+  <circle cx="80" cy="52" r="3" fill="#3B2417"/>
+  <circle cx="118" cy="53" r="2.5" fill="#3B2417"/>
+  <rect x="97" y="120" width="6" height="55" fill="#5C6B4F"/>
+  <rect x="70" y="175" width="60" height="8" rx="3" fill="#5C6B4F"/>
+</svg>

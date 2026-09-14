@@ -1,0 +1,411 @@
+/* ============================================================
+   estilosIA.css
+   Catálogo de Cócteles — Ezequiel Prieto (@pibebartender)
+   Paleta y tipografía pensadas para una barra de autor:
+   verde botella oscuro, cobre curtido y papel color arena.
+   Cumple pautas WCAG 2.1 nivel AA (contraste, foco visible,
+   objetivos táctiles, no depender solo del color).
+   ============================================================ */
+
+:root {
+  /* Color */
+  --color-fondo: #EFE7D8;           /* arena cálida, fondo general */
+  --color-fondo-tarjeta: #FFFBF2;   /* crema, fondo de tarjetas */
+  --color-verde-oscuro: #1F3D2E;    /* verde botella, header/footer/nav */
+  --color-verde-oscuro-texto: #FDF9EF; /* texto claro sobre verde oscuro */
+  --color-cobre: #A6511F;           /* cobre, botones y acentos */
+  --color-cobre-oscuro: #7A3B14;    /* cobre oscuro, texto de enlaces y hover */
+  --color-texto: #2A2420;           /* tinta cálida, texto principal */
+  --color-borde: #5C6B4F;           /* oliva apagado, bordes */
+  --color-foco: #123524;            /* foco visible sobre fondos claros */
+  --color-foco-oscuro: #FFD37A;     /* foco visible sobre fondos oscuros */
+
+  /* Tipografía */
+  --fuente-titulos: Georgia, "Iowan Old Style", "Times New Roman", serif;
+  --fuente-texto: "Trebuchet MS", Verdana, Geneva, sans-serif;
+}
+
+/* ============================================================
+   Reseteo básico y accesibilidad general
+   ============================================================ */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 100%; /* respeta el tamaño de fuente configurado por la persona usuaria */
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+body {
+  margin: 0;
+  font-family: var(--fuente-texto);
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--color-texto);
+  background-color: var(--color-fondo);
+}
+
+h1, h2, h3 {
+  font-family: var(--fuente-titulos);
+  line-height: 1.25;
+  margin: 0 0 0.5em 0;
+}
+
+h1 { font-size: 2rem; }
+h2 { font-size: 1.5rem; margin-top: 0; }
+h3 { font-size: 1.15rem; }
+
+p {
+  margin: 0 0 1em 0;
+  max-width: 70ch; /* líneas cortas, más legibles */
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: var(--color-cobre-oscuro);
+  text-decoration: underline; /* los enlaces nunca dependen solo del color */
+  text-underline-offset: 2px;
+}
+
+a:hover {
+  color: var(--color-verde-oscuro);
+}
+
+/* Foco visible en todo el sitio: nunca se elimina el outline */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible {
+  outline: 3px solid var(--color-foco);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+/* Enlace para saltar al contenido principal */
+.salto-enlace {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  background-color: var(--color-verde-oscuro);
+  color: var(--color-verde-oscuro-texto);
+  padding: 0.85rem 1.25rem;
+  z-index: 1000;
+  border-radius: 0 0 6px 0;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.salto-enlace:focus {
+  left: 0;
+}
+
+/* ============================================================
+   Cabecera
+   ============================================================ */
+
+.cabecera-sitio {
+  background-color: var(--color-verde-oscuro);
+  color: var(--color-verde-oscuro-texto);
+  padding: 2rem 1.5rem;
+  text-align: center;
+}
+
+.cabecera-sitio h1 {
+  color: var(--color-verde-oscuro-texto);
+}
+
+.cabecera-sitio .lema {
+  margin: 0;
+  font-size: 1.05rem;
+  max-width: 60ch;
+  margin-inline: auto;
+}
+
+/* ============================================================
+   Disposición general: barra lateral + contenido
+   ============================================================ */
+
+.disposicion {
+  display: flex;
+  align-items: flex-start;
+  gap: 2rem;
+  max-width: 1100px;
+  margin-inline: auto;
+  padding: 1.5rem;
+}
+
+.barra-lateral {
+  flex: 0 0 220px;
+  background-color: var(--color-verde-oscuro);
+  border-radius: 8px;
+  padding: 1.25rem;
+}
+
+.barra-lateral ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+.barra-lateral a {
+  color: var(--color-verde-oscuro-texto);
+  display: block;
+  padding: 0.5rem 0.25rem;
+  min-height: 44px; /* objetivo táctil accesible */
+  display: flex;
+  align-items: center;
+}
+
+.barra-lateral a:hover {
+  color: var(--color-foco-oscuro);
+}
+
+.barra-lateral a:focus-visible {
+  outline-color: var(--color-foco-oscuro);
+}
+
+.barra-lateral a[aria-current="page"] {
+  font-weight: bold;
+  border-left: 4px solid var(--color-foco-oscuro);
+  padding-left: 0.6rem;
+}
+
+.catalogo {
+  flex: 1;
+  min-width: 0;
+}
+
+/* ============================================================
+   Filtro de categorías (radio buttons con apariencia de pestañas)
+   ============================================================ */
+
+.filtro-categorias {
+  border: 2px solid var(--color-borde);
+  border-radius: 8px;
+  padding: 1.25rem;
+  margin: 0 0 2rem 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+.filtro-categorias legend {
+  font-family: var(--fuente-titulos);
+  font-weight: bold;
+  padding: 0 0.5rem;
+  width: 100%;
+  margin-bottom: 0.5rem;
+}
+
+/* Ocultamos visualmente el radio nativo, pero sigue siendo accesible
+   por teclado y por lectores de pantalla (no usar display:none) */
+.filtro-categorias input[type="radio"] {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+.filtro-categorias label {
+  cursor: pointer;
+  background-color: var(--color-fondo-tarjeta);
+  color: var(--color-texto);
+  border: 2px solid var(--color-borde);
+  border-radius: 20px;
+  padding: 0.65rem 1.3rem;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  font-weight: 600;
+}
+
+/* El estado de selección nunca depende solo del color:
+   también cambia el peso de fuente y aparece un símbolo de check */
+.filtro-categorias input[type="radio"]:checked + label {
+  background-color: var(--color-cobre);
+  color: var(--color-verde-oscuro-texto);
+  border-color: var(--color-cobre-oscuro);
+}
+
+.filtro-categorias input[type="radio"]:checked + label::before {
+  content: "✓ ";
+}
+
+.filtro-categorias input[type="radio"]:focus-visible + label {
+  outline: 3px solid var(--color-foco);
+  outline-offset: 2px;
+}
+
+/* Mostrar solo la sección de la categoría seleccionada */
+.categoria-cocteles {
+  display: none;
+}
+
+.catalogo:has(#cat-martinis:checked) #sec-martinis,
+.catalogo:has(#cat-negronis:checked) #sec-negronis,
+.catalogo:has(#cat-daiquiris:checked) #sec-daiquiris {
+  display: block;
+}
+
+/* ============================================================
+   Grilla de cócteles
+   ============================================================ */
+
+.grilla-cocteles {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+}
+
+.tarjeta-cocktail {
+  background-color: var(--color-fondo-tarjeta);
+  border: 2px solid var(--color-borde);
+  border-radius: 6px;
+  padding: 1.25rem;
+}
+
+.tarjeta-cocktail img {
+  border: 1px solid var(--color-borde);
+  border-radius: 4px;
+  margin-bottom: 0.85rem;
+}
+
+.tarjeta-cocktail h3 {
+  margin-bottom: 0.4rem;
+}
+
+.tarjeta-cocktail p {
+  margin-bottom: 0;
+}
+
+/* ============================================================
+   Formulario de datos personales
+   ============================================================ */
+
+.formulario-datos {
+  max-width: 480px;
+  border: 2px solid var(--color-borde);
+  border-radius: 6px;
+  padding: 1.5rem;
+  background-color: var(--color-fondo-tarjeta);
+}
+
+.campo-formulario {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1.25rem;
+}
+
+.campo-formulario label {
+  font-weight: bold;
+  margin-bottom: 0.4rem;
+}
+
+.campo-formulario input {
+  font: inherit;
+  padding: 0.65rem 0.75rem;
+  min-height: 44px;
+  border: 2px solid var(--color-borde);
+  border-radius: 4px;
+  background-color: #ffffff;
+  color: var(--color-texto);
+}
+
+.campo-formulario input:invalid:not(:placeholder-shown) {
+  border-color: #8B1E1E;
+}
+
+.texto-ayuda {
+  font-size: 0.9rem;
+  color: var(--color-texto);
+  margin: 0.4rem 0 0 0;
+}
+
+.formulario-datos button {
+  font: inherit;
+  font-weight: bold;
+  background-color: var(--color-cobre);
+  color: var(--color-verde-oscuro-texto);
+  border: 2px solid var(--color-cobre-oscuro);
+  border-radius: 6px;
+  padding: 0.75rem 1.5rem;
+  min-height: 44px;
+  cursor: pointer;
+}
+
+.formulario-datos button:hover {
+  background-color: var(--color-cobre-oscuro);
+}
+
+/* ============================================================
+   Pie de página
+   ============================================================ */
+
+.pie-sitio {
+  background-color: var(--color-verde-oscuro);
+  color: var(--color-verde-oscuro-texto);
+  text-align: center;
+  padding: 1.5rem;
+}
+
+.pie-sitio p {
+  margin: 0.25rem auto;
+  max-width: none;
+}
+
+.pie-sitio a {
+  color: var(--color-verde-oscuro-texto);
+}
+
+.pie-sitio a:focus-visible {
+  outline-color: var(--color-foco-oscuro);
+}
+
+/* ============================================================
+   Responsive: pantallas angostas (celulares)
+   ============================================================ */
+
+@media (max-width: 700px) {
+  .disposicion {
+    flex-direction: column;
+    padding: 1rem;
+  }
+
+  .barra-lateral {
+    flex-basis: auto;
+    width: 100%;
+  }
+
+  .barra-lateral ul {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .cabecera-sitio h1 {
+    font-size: 1.6rem;
+  }
+
+  .filtro-categorias {
+    justify-content: center;
+  }
+}

@@ -1,0 +1,11 @@
+<svg viewBox="0 0 200 220" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="t1 d1">
+  <title id="t1">Martini Clásico</title>
+  <desc id="d1">Copa de martini triangular con líquido transparente y una aceituna verde</desc>
+  <rect width="200" height="220" fill="#FFFBF2"/>
+  <polygon points="40,40 160,40 100,120" fill="#EDE7D3" stroke="#5C6B4F" stroke-width="3"/>
+  <polygon points="52,48 148,48 100,108" fill="#E7F1EA" opacity="0.9"/>
+  <rect x="97" y="120" width="6" height="55" fill="#5C6B4F"/>
+  <rect x="70" y="175" width="60" height="8" rx="3" fill="#5C6B4F"/>
+  <circle cx="100" cy="90" r="9" fill="#5B7A45" stroke="#3F5A2E" stroke-width="2"/>
+  <rect x="97" y="81" width="10" height="10" fill="#8B4318"/>
+</svg>
